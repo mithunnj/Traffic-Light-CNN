@@ -1,6 +1,7 @@
 import yaml
 import os
 import sys
+import cv2
 
 BASEDIR = os.getcwd().split('helper')[0] # Remove the helper directory from the project base filepath
 YAML_FP = BASEDIR + "data/dataset_train_rgb/train.yaml"
@@ -23,7 +24,7 @@ def update_yaml_file():
 
     with open(YAML_FP, 'w') as write_file:
         for update_file in update_files_list:
-            path = UPDATE_BASE_FP + "/{}".format(update_file)
+            path = "./rgb/test/{}".format(update_file)
             content = dict()
             content['boxes'] = list()
             content['path'] = path
@@ -34,3 +35,23 @@ def update_yaml_file():
     write_file.close()
 
     return
+
+def update_img_size():
+    '''
+    Given a list of new files, resize it to 720p to adjust for the rest of the 
+    data processing pipeline.
+    '''
+    update_files_list = os.listdir(UPDATE_BASE_FP)
+
+    # Loop through every new image and resize to 720p
+    for image in update_files_list:
+        fp = "{}/{}".format(UPDATE_BASE_FP, image)
+        load_img = cv2.imread(fp)
+        resized_image = cv2.resize(load_img, (1280, 720)) 
+        cv2.imwrite(fp, resized_image)
+
+    return
+
+
+#update_yaml_file() # Uncomment this line to add new images to the .yaml file for training/testing purposes.
+#update_img_size() # Uncomment this line to be able to resize images to 720p.
