@@ -174,6 +174,3 @@ def update_yolo():
     print('# of objects processed: {}'.format(OBJ_COUNT)) #DEBUG
 
     return
-
-#NOTE: Uncomment this line as your final step
-update_yolo()
