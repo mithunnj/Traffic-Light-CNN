@@ -215,8 +215,3 @@ def generate_heatmap(dataset):
   print('Info to assist with vertical crop:\nThe y-max is {}'.format(max(y)))
 
   return
-
-print(parse_yaml())
-
-
-
