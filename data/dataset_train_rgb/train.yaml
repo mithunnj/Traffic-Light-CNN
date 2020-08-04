@@ -16119,207 +16119,820 @@
     occluded: false
     x_max: 528.8805889358
     x_min: null
-- boxes: []
+  path: ./rgb/train/2015-10-05-10-55-33_bag/50180.png
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0362.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0363.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0229.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0361.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0228.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0238.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0370.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0364.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0365.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0371.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0239.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0367.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0373.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0372.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0366.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0249.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0301.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0328.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0300.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0248.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0289.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0302.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0303.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0267.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0273.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0272.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0266.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0258.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0270.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0338.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0339.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0265.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0271.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0259.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0283.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0254.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0240.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0268.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0320.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0335.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0321.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0269.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0241.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0255.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0282.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0296.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0280.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0294.jpg
-- boxes: []
+- boxes:
+  - label: Yellow
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0243.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0257.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0337.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0323.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0322.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0256.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0242.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0295.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0281.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0285.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0246.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0252.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0332.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0326.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0327.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0333.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0253.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0247.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0286.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0279.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0251.jpg
-- boxes: []
+- boxes:
+  - label: Yellow
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0245.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0319.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0325.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0324.jpg
-- boxes: []
+- boxes:
+  - label: Yellow
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0244.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0250.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0287.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0293.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0237.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0380.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0343.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0342.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0236.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0234.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0354.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0340.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0368.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0369.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0341.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0355.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0235.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0231.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0351.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0345.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0344.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0350.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0230.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0232.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0226.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0352.jpg
-- boxes: []
+- boxes:
+  - label: Red
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0353.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0227.jpg
-- boxes: []
+- boxes:
+  - label: Green
+    occluded: false
+    x_max: 1
+    x_min: 1
+    y_max: 1
+    y_min: 1
   path: ./rgb/test/IMG_0233.jpg
