@@ -31102,5 +31102,3 @@
   path: ./rgb/train/2015-10-05-16-02-30_bag/720654.png
 - boxes: []
   path: ./rgb/train/2015-10-05-16-02-30_bag/720932.png
-- boxes: []
-  path: ./rgb/train/2015-10-05-16-02-30_bag/mit.png

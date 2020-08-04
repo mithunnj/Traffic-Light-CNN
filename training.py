@@ -73,69 +73,28 @@ def nn_parseable_data(relative_fp, metadata):
     param: metadata <dict> - A given entry in yolo_result.json
     return: <str>, <arr> - The absolute filepath of the cropped image, and the onehot encoding 
     '''
-    absolute_fp = CROP_IMGS + relative_fp 
-    string_split = relative_fp.split('/')
+    if "IMG_" in relative_fp:
+        sys.exit('Need to implement someting different')
 
-    string_split = [x for x in string_split if x] # Remove empty strings from array
-    basename = string_split[0]
-    object_num = int(string_split[-1].split('_')[-1].split('.')[0])
-
-    for image in metadata:
-        if basename == os.path.basename(image['filepath']).split(".")[0]:
-            encoding = image['onehot_encod'][object_num]
-
-        return absolute_fp, encoding
-
-    return None, None
-
-def resize_cv(image):
-  """
-  param: <opened image>- A image that has been opened is fed into resize_cv() where the image is then converted to an image of specified
-    dimensions in this case 28, 8
-
-  returns <opened image>- Returns *same* opened image with new dimensions which can then be saved over
-  """
-  image = cv2.resize(image, (28, 28), interpolation = cv2.INTER_LINEAR)
-  image = torch.from_numpy(image)
-  reformatted_image = image.reshape([1, 3, 28, 28]) 
-  return reformatted_image
-
-def get_accuracy(model, train=False):
-    if train:
-        data_loader = split_data['train']
+    
     else:
-        data_loader = split_data['val'][0:100]
+        absolute_fp = CROP_IMGS + relative_fp 
+        string_split = relative_fp.split('/')
 
-    correct = 0
-    total = 0
-    for image in data_loader:
-        print(nn_parseable_data(image, METADATA))
-        try: # This will handle the Google Colab related ValueError: invalid literal for int () with base 10 issue that arises once in a while
-          fp, onehot = nn_parseable_data(image, METADATA) #NOTE: Your onehot encoding error could have been because some of the values returned were strings instead of integers, so thats why I've converted the type directly here.
-        except: 
-          continue
+        string_split = [x for x in string_split if x] # Remove empty strings from array
+        basename = string_split[0]
+        object_num = int(string_split[-1].split('_')[-1].split('.')[0])
 
-        onehot_tensor = torch.Tensor([int(onehot)]) # Ensure the output of the onehot variable is of type integer, and needs to be a tensor to be fed into criterion        
-        img = cv2.imread(fp) # Now that the image is loaded, now you can resize it
-        img = resize_cv(img) # Overwrite the image variable with the resized version   
-        print('One hot tensor: ', onehot_tensor)
-      
-        output = model(img)
-        print('Output here: ', output)
-        output = output.detach().numpy()[0]
-        onehot_as_int = onehot_tensor.detach().numpy()[0]
-        
-        if output <= 0:
-         pred = 0
-        else:
-          pred = 1
-    
-        if pred == onehot_as_int:
-          correct += 1
-    
-    total = len(data_loader)
-    return print((correct / total)*100,'%')
+        for image in metadata:
+            if basename == os.path.basename(image['filepath']).split(".")[0]:
+                encoding = image['onehot_encod'][object_num]
 
+                return absolute_fp, encoding
+
+        print("Problem basename: ", basename)
+        sys.exit('Mit')
+
+        return None, None
 
 def train(model, data, metadata,num_epochs=2):
     criterion = nn.BCEWithLogitsLoss() # For binary classification
@@ -186,9 +145,11 @@ UPDATE_DATA = False # Set this to true if you uploaded new test data to the data
 if UPDATE_DATA:
     new_images()
 
+'''
+NOTE: Uncomment codeblock below if you want to retrain CNN
 model = TrafficLightClassifier()
 split_data = split_dataset(CROP_IMGS)
 train(model, split_data['train'], METADATA,num_epochs=20)
-#get_accuracy(model, train= True)
+'''
 
     
