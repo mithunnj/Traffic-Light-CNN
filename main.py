@@ -6,16 +6,20 @@ from training import TrafficLightClassifier
 import os
 import torch
 from helper.split_data import split_dataset
+from helper.general_helper import parse_yaml
 from training import nn_parseable_data
 import json
 import sys
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Global variables
 CURRENT_DIR = os.getcwd()
 SAVED_MODEL = CURRENT_DIR + "/helper/savedmodel.pth"
 CROP_IMGS = CURRENT_DIR + "/cropped_imgs"
 YOLO_RESULT_FP = CURRENT_DIR + "/helper/yolo_result.json"
+TRAIN_YAML_DIR = CURRENT_DIR + "/data/dataset_train_rgb/train.yaml"
 
 # Load metadata for the Bosch Trafficlight dataset as described in yolo_result.json
 METADATA = list()
@@ -35,11 +39,120 @@ def resize_cv(image):
   reformatted_image = image.reshape([1, 3, 28, 28]) 
   return reformatted_image
 
+def bright_spot(rgb_image): 
+    ''' Takes in a standardized RBG image and determines the location of the light, and will help determine what colour it is. ''' 
 
-def get_accuracy(model, data_loader, metadata):
-    correct = 0
-    total = 0
-    skip = 0 # DEBUG
+    def im_crop(image, lower_y, upper_y, lower_x, upper_x):
+        '''Takes an image and specific crop dimensions and outputs a cropped image.'''
+        crop_im = image[lower_y:upper_y, lower_x:upper_x]
+        return crop_im
+
+    def rgb_v(image):
+        '''
+        Takes an RGB image and converts it into an HSV image.
+        '''
+        hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV) 
+        v_channel = hsv_image[:,:,2]
+        return v_channel
+
+    def red_green(rgb_image, position):
+        '''
+        Takes an image and double checks to determine if it is red or green.
+        '''
+        
+        width = rgb_image.shape[0]
+        height = rgb_image.shape[1]
+        
+        pixels = []
+        
+        for i in range(width):
+            for j in range(height):
+                pixels.append(rgb_image[i][j]) 
+        
+        total_red = 0
+        total_green = 0
+
+        for i in range(len(pixels)):
+            total_red = pixels[i][0] + total_red
+
+        for j in range(len(pixels)):
+            total_green = pixels[i][1] + total_green
+            
+        area = width*height
+        
+        if position == 1:
+            avg_red = total_red / area
+            avg_green = total_green*0.445 / area
+        else:
+            avg_red = total_red*0.445 / area
+            avg_green = total_green / area
+
+        if avg_red > avg_green:
+            state = 'red'
+        else:
+            state = 'green'
+    
+        return state
+
+    def avg_brightness(v_channel):
+        total_brightness = np.sum(v_channel)
+        width = v_channel.shape[0]
+        height = v_channel.shape[1]
+        
+        area = width*height
+        avg_brightness = total_brightness / area
+
+        return avg_brightness
+
+
+    rgb_image = cv2.resize(rgb_image, (32, 32))  
+    upper = im_crop(rgb_image, 0, 11, 0, 32)
+    middle = im_crop(rgb_image, 12, 21, 0, 32)
+    lower = im_crop(rgb_image, 22, 32, 0, 32)
+    
+    upper_v = rgb_v(upper)
+    middle_v = rgb_v(middle)
+    lower_v = rgb_v(lower)
+    
+    upper_brightness = avg_brightness(upper_v)
+    middle_brightness = avg_brightness(middle_v)
+    lower_brightness = avg_brightness(lower_v)
+
+    values = []
+    values.append(upper_brightness)
+    values.append(middle_brightness)
+    values.append(lower_brightness)
+    
+    max_value = max(values)
+    counter = 1
+    
+    for i in values:
+        if i == max_value:
+            position = counter
+        else:
+            counter = counter + 1
+    
+    if position == 1:
+        selected_im = upper
+    elif position == 2:
+        selected_im = middle
+    else:
+        selected_im = lower
+
+
+    if position == 1:
+        state = red_green(selected_im, position)
+    elif position == 2:
+        state = 'yellow'
+    else:
+        state = red_green(selected_im, position)
+
+
+    return state
+
+def get_accuracy(model, data_loader, metadata, original_data):
+    correct, total, colour_correct, colour_tot = 0, 0, 0, 0
+
     for image in data_loader:
         fp, onehot = nn_parseable_data(image, metadata) #NOTE: Your onehot encoding error could have been because some of the values returned were strings instead of integers, so thats why I've converted the type directly here.
 
@@ -59,19 +172,40 @@ def get_accuracy(model, data_loader, metadata):
           pred = 1
     
         if pred == onehot_as_int:
-          correct += 1
+            correct += 1
+
+            # If we have a valid traffic light candidate
+            if pred == 1:
+                rgb_image = cv2.imread(fp)
+                pred_result = bright_spot(rgb_image)
+                colour_tot += 1
+
+                basename = fp.split('/')[-2]
+
+                for data in original_data:
+                    if basename == data['fp'].split('/')[-1].split('.')[0]:
+                        if pred_result in [x.lower() for x in data['labels'].keys()]:
+                            colour_correct += 1
+
     
     total = len(data_loader)
-    print('Correct: ', correct)
-    print('Total: ', total)
-    return print((correct / total)*100,'%')
+    
+    print("Percentage correct classification by CNN: {} %".format((correct / total)*100))
+    print("Percentage correct classification by colour detector: {} %".format((colour_correct / colour_tot)*100))
+    
+    return 
+
+
 
 # Load partitioned dataset
 split_data = split_dataset(CROP_IMGS)
+
+# Load original dataset information
+yaml_info = parse_yaml(yaml_fp=TRAIN_YAML_DIR)
 
 # Define model class and load previously trained CNN 
 model = TrafficLightClassifier()
 model = torch.load(SAVED_MODEL)
 
 # Test model accuracy
-get_accuracy(model, split_data['val'], METADATA)
+get_accuracy(model, split_data['test'], METADATA, yaml_info)
