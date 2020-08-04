@@ -1,13 +1,11 @@
 '''
-Description: 
+Description: This helper function will be used to split the dataset into Test, Train and Validation subsets.
 '''
 
 import os
 import sys
 
-CROP_IMGS = os.path.dirname(os.getcwd()) + "/cropped_imgs"
-
-def split_dataset():
+def split_dataset(CROP_IMGS):
     '''
     Take all the detected objects from the original Bosch Dataset (the output from the YOLOv3 portion of the pipeline) and
     split the data into a training set (60% of the dataset) and validation set (40% of the dataset).
@@ -41,8 +39,8 @@ def split_dataset():
                     file_count += 1
                     data_split['val'].append("/{}/{}".format(directory, sub_file))
 
-    print("Length of train set: {}".format(len(data_split['train'])))
-    print("Length of validation set: {}".format(len(data_split['val'])))
-    print("Length of test set: {}".format(len(data_split['test'])))
+    #print("Length of train set: {}".format(len(data_split['train'])))
+    #print("Length of validation set: {}".format(len(data_split['val'])))
+    #print("Length of test set: {}".format(len(data_split['test'])))
 
     return data_split

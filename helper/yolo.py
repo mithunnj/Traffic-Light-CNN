@@ -5,7 +5,7 @@ Description: This helper function is meant to handle all the YOLOv3 object detec
     in the yolo_result.json config file for further use.
 '''
 
-from general_helper import parse_yaml
+from helper.general_helper import parse_yaml
 import numpy as np
 import argparse
 import time
