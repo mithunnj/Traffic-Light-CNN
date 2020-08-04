@@ -73,28 +73,20 @@ def nn_parseable_data(relative_fp, metadata):
     param: metadata <dict> - A given entry in yolo_result.json
     return: <str>, <arr> - The absolute filepath of the cropped image, and the onehot encoding 
     '''
-    if "IMG_" in relative_fp:
-        sys.exit('Need to implement someting different')
+    absolute_fp = CROP_IMGS + relative_fp 
+    string_split = relative_fp.split('/')
 
-    
-    else:
-        absolute_fp = CROP_IMGS + relative_fp 
-        string_split = relative_fp.split('/')
+    string_split = [x for x in string_split if x] # Remove empty strings from array
+    basename = string_split[0]
+    object_num = int(string_split[-1].split('_')[-1].split('.')[0])
 
-        string_split = [x for x in string_split if x] # Remove empty strings from array
-        basename = string_split[0]
-        object_num = int(string_split[-1].split('_')[-1].split('.')[0])
+    for image in metadata:
+        if basename == os.path.basename(image['filepath']).split(".")[0]:
+            encoding = image['onehot_encod'][object_num]
 
-        for image in metadata:
-            if basename == os.path.basename(image['filepath']).split(".")[0]:
-                encoding = image['onehot_encod'][object_num]
+            return absolute_fp, encoding
 
-                return absolute_fp, encoding
-
-        print("Problem basename: ", basename)
-        sys.exit('Mit')
-
-        return None, None
+    return None, None
 
 def train(model, data, metadata,num_epochs=2):
     criterion = nn.BCEWithLogitsLoss() # For binary classification

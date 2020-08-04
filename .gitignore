@@ -3,4 +3,5 @@ yolo-coco/yolov3.weights
 helper/__pycache__/
 cropped_imgs/
 .ipynb_checkpoints
+__pycache__/
 

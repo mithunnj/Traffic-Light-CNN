@@ -43,11 +43,6 @@ def get_accuracy(model, data_loader, metadata):
     for image in data_loader:
         fp, onehot = nn_parseable_data(image, metadata) #NOTE: Your onehot encoding error could have been because some of the values returned were strings instead of integers, so thats why I've converted the type directly here.
 
-        # DEBUG
-        if not fp or not onehot:
-            skip += 1
-            continue
-
         onehot_tensor = torch.Tensor([int(onehot)]) # Ensure the output of the onehot variable is of type integer, and needs to be a tensor to be fed into criterion        
         img = cv2.imread(fp) # Now that the image is loaded, now you can resize it
         img = resize_cv(img) # Overwrite the image variable with the resized version   
@@ -67,9 +62,8 @@ def get_accuracy(model, data_loader, metadata):
           correct += 1
     
     total = len(data_loader)
-    print('correct: ', correct)
-    print('total: ', total)
-    print('skip: ', skip)
+    print('Correct: ', correct)
+    print('Total: ', total)
     return print((correct / total)*100,'%')
 
 # Load partitioned dataset
