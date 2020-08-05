@@ -161,6 +161,8 @@ def bright_spot(rgb_image):
 def get_accuracy(model, data_loader, metadata, original_data, demo=False, demo_fp=None):
     correct, total, colour_correct, colour_tot, pred_result = 0, 0, 0, 0, str()
 
+    print(CRED + "CNN is processing..." + CEND)
+
     if not demo:
 
         for image in data_loader:
@@ -169,10 +171,8 @@ def get_accuracy(model, data_loader, metadata, original_data, demo=False, demo_f
             onehot_tensor = torch.Tensor([int(onehot)]) # Ensure the output of the onehot variable is of type integer, and needs to be a tensor to be fed into criterion        
             img = cv2.imread(fp) # Now that the image is loaded, now you can resize it
             img = resize_cv(img) # Overwrite the image variable with the resized version   
-            print('One hot tensor: ', onehot_tensor)
         
             output = model(img)
-            print('Output here: ', output)
             output = output.detach().numpy()[0]
             onehot_as_int = onehot_tensor.detach().numpy()[0]
             
@@ -297,4 +297,7 @@ if user_demo == "y":
     print(CGREEN + "\nStarting demo for:\n-Colour: {}\n-Image: {}\n-Detected Objects: {}\n".format(user_colour, str(DATASET + demo_image[user_colour]), CROP_IMGS + "/{}".format(basename)) + CEND)
     get_accuracy(model, split_data, METADATA, yaml_info, demo=user_demo, demo_fp=demo_image[user_colour])
 else:
+    print(CGREEN + "\nResults from validation dataset trial: " + CEND)
+    get_accuracy(model, split_data['val'], METADATA, yaml_info)
+    print(CGREEN + "\nResults from holdout test dataset trial: " + CEND)
     get_accuracy(model, split_data['test'], METADATA, yaml_info)
