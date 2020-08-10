@@ -22,6 +22,9 @@ DATASET = CURRENT_DIR + "/data/dataset_train_rgb"
 YOLO_RESULT_FP = CURRENT_DIR + "/helper/yolo_result.json"
 TRAIN_YAML_DIR = CURRENT_DIR + "/data/dataset_train_rgb/train.yaml"
 
+# Confusion matrix
+TRUE_POSITIVE, FALSE_POSITIVE, TRUE_NEGATIVE, FALSE_NEGATIVE = 0, 0, 0, 0
+
 # Print colours
 CGREEN  = '\33[32m'
 CEND    = '\33[0m'
@@ -161,6 +164,8 @@ def bright_spot(rgb_image):
 def get_accuracy(model, data_loader, metadata, original_data, demo=False, demo_fp=None):
     correct, total, colour_correct, colour_tot, pred_result = 0, 0, 0, 0, str()
 
+    global TRUE_POSITIVE, TRUE_NEGATIVE, FALSE_NEGATIVE, FALSE_POSITIVE
+
     print(CRED + "CNN is processing..." + CEND)
 
     if not demo:
@@ -180,6 +185,16 @@ def get_accuracy(model, data_loader, metadata, original_data, demo=False, demo_f
                 pred = 0
             else:
                 pred = 1
+
+            # Track confusion matrix metrics for the trial
+            if (pred == 0) and (onehot_as_int == 0): # TRUE NEGATIVE case
+                TRUE_NEGATIVE += 1
+            elif (pred == 1) and (onehot_as_int == 0): # FALSE POSITIVE case
+                FALSE_POSITIVE += 1
+            elif (pred == 1) and (onehot_as_int == 1): # TRUE POSITIVE
+                TRUE_POSITIVE += 1
+            elif (pred == 0) and (onehot_as_int == 1): # FALSE NEGATIVE
+                FALSE_NEGATIVE += 1
         
             if pred == onehot_as_int:
                 correct += 1
@@ -199,6 +214,12 @@ def get_accuracy(model, data_loader, metadata, original_data, demo=False, demo_f
 
         
         total = len(data_loader)
+
+        precision = TRUE_POSITIVE / (TRUE_POSITIVE + FALSE_POSITIVE)
+        recall = TRUE_POSITIVE / (TRUE_POSITIVE + FALSE_NEGATIVE)
+
+        print("Recall: {}".format(recall))
+        print("Precision: {}".format(precision))
         
         print("Percentage correct classification by CNN: {} %".format((correct / total)*100))
         print("Percentage correct classification by colour detector: {} %".format((colour_correct / colour_tot)*100))
